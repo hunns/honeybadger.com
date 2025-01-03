@@ -1,0 +1,25 @@
+#spring.profiles.active= dev
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demoDB
+    username: postgres
+    password: pgpassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+server: 
+  servlet:
+    context-path: /api/v1/
+

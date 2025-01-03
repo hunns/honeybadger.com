@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    #url: jdbc:postgresql://postgresprod:1234/prodDB
+    url: jdbc:postgresql://localhost:1234/prodDB
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

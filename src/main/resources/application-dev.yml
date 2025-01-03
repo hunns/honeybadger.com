@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_DEV_CONTAINER:localhost}:9000/demodb
+    username: postgres
+    password: Password@1
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+server:
+  port: 8081
+
+
+application:
+  security:
+    jwt:
+      secret-key: 0CABE84777F2990C5E76315D10DEDB685C1F9A26968EE6903D57BF95791884978FEA8235D35E4ABEC0F0F217AAAA22287F4A79DC240B7B7B19B7A26E9E0E111D
+      expiration: 86400000  #1 day
+      refresh-token:
+          expiration: 1800000 #30 mins
+
